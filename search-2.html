@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Trend Beee</title>
+	
+    <!-- Bootstrap core CSS -->	
+	<link rel="stylesheet" type="text/css" href="resource/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+	<link rel="stylesheet" type="text/css" href="resource/fontawesome-free/css/all.min.css" >	
+    <link rel="stylesheet" type="text/css" href="resource/css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="resource/css/main.css" />
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+
+
+
+<style>
+.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { float: left;min-width: 100px; }
+.MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#FFF; color:#666; border-radius:50px; box-shadow: 0px 1px 5px #ccc; }
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
+.MultiCarousel .leftLst { left:0; }
+.MultiCarousel .rightLst { right:0; }
+.MultiCarousel .MultiCarousel-inner .item .lead{margin: 0px;}
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+
+</style>
+<script>
+$(document).ready(function () {
+    var itemsMainDiv = ('.MultiCarousel');
+    var itemsDiv = ('.MultiCarousel-inner');
+    var itemWidth = "";
+
+    $('.leftLst, .rightLst').click(function () {
+        var condition = $(this).hasClass("leftLst");
+        if (condition)
+            click(0, this);
+        else
+            click(1, this)
+    });
+
+    ResCarouselSize();
+
+
+
+
+    $(window).resize(function () {
+        ResCarouselSize();
+    });
+
+    //this function define the size of the items
+    function ResCarouselSize() {
+        var incno = 0;
+        var dataItems = ("data-items");
+        var itemClass = ('.item');
+        var id = 0;
+        var btnParentSb = '';
+        var itemsSplit = '';
+        var sampwidth = $(itemsMainDiv).width();
+        var bodyWidth = $('body').width();
+        $(itemsDiv).each(function () {
+            id = id + 1;
+            var itemNumbers = $(this).find(itemClass).length;
+            btnParentSb = $(this).parent().attr(dataItems);
+            itemsSplit = btnParentSb.split(',');
+            $(this).parent().attr("id", "MultiCarousel" + id);
+
+
+            if (bodyWidth >= 1200) {
+                incno = itemsSplit[4];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 992) {
+                incno = itemsSplit[3];
+                itemWidth = sampwidth / incno;
+            }
+            else if (bodyWidth >= 768) {
+                incno = itemsSplit[2];
+                itemWidth = sampwidth / incno;
+            }
+			
+            else if (bodyWidth >= 360) {
+                incno = itemsSplit[1];
+                itemWidth = sampwidth / incno;
+            }
+            else {
+                incno = itemsSplit[0];
+                itemWidth = sampwidth / incno;
+            }
+            $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
+            $(this).find(itemClass).each(function () {
+                $(this).outerWidth(itemWidth);
+            });
+
+            $(".leftLst").addClass("over");
+            $(".rightLst").removeClass("over");
+
+        });
+    }
+
+
+    //this function used to move the items
+    function ResCarousel(e, el, s) {
+        var leftBtn = ('.leftLst');
+        var rightBtn = ('.rightLst');
+        var translateXval = '';
+        var divStyle = $(el + ' ' + itemsDiv).css('transform');
+        var values = divStyle.match(/-?[\d\.]+/g);
+        var xds = Math.abs(values[4]);
+        if (e == 0) {
+            translateXval = parseInt(xds) - parseInt(itemWidth * s);
+            $(el + ' ' + rightBtn).removeClass("over");
+
+            if (translateXval <= itemWidth / 2) {
+                translateXval = 0;
+                $(el + ' ' + leftBtn).addClass("over");
+            }
+        }
+        else if (e == 1) {
+            var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
+            translateXval = parseInt(xds) + parseInt(itemWidth * s);
+            $(el + ' ' + leftBtn).removeClass("over");
+
+            if (translateXval >= itemsCondition - itemWidth / 2) {
+                translateXval = itemsCondition;
+                $(el + ' ' + rightBtn).addClass("over");
+            }
+        }
+        $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
+    }
+
+    //It is used to get some elements from btn
+    function click(ell, ee) {
+        var Parent = "#" + $(ee).parent().attr("id");
+        var slide = $(Parent).attr("data-slide");
+        ResCarousel(ell, Parent, slide);
+    }
+
+});
+</script>
+</head>
+
+<body>
+	<!-- Topbar -->
+	<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 fixed-top shadow">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="index.html">
+			<img src="resource/images/logo.png" alt="logo" style="width:45px;">
+		</a>
+		
+		<form class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 text-center navbar-search" action="search.html">
+			<div class="input-group">
+				<input type="text" class="form-control bg-light border-0 small left-radius" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+				<span class="input-group-addon border-left-0 search_icon"><i class="fas fa-search fa-fw"></i></span>
+			</div>
+		</form>
+		<!-- Topbar Navbar -->
+		<ul class="navbar-nav ml-auto">
+			<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+			<li class="nav-item dropdown no-arrow d-sm-none">
+				<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-search fa-fw"></i>
+				</a>
+				<!-- Dropdown - Messages -->
+				<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+					<form class="form-inline mr-auto w-100 navbar-search">
+						<div class="input-group">
+						<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</li>
+
+			<!-- Nav Item - Alerts -->
+			<li class="nav-item dropdown no-arrow mx-1">
+				<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-bell fa-fw"></i>
+					<span class="badge badge-danger badge-counter">3+</span>
+				</a>
+				<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+					<h6 class="dropdown-header">Alerts Center</h6>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-primary">
+								<i class="fas fa-file-alt text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 12, 2019</div>
+							<span class="font-weight-bold">A new monthly report is ready to download!</span>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-success">
+								<i class="fas fa-donate text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 7, 2019</div>
+							$290.29 has been deposited into your account!
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-warning">
+								<i class="fas fa-exclamation-triangle text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 2, 2019</div>
+							Spending Alert: We've noticed unusually high spending for your account.
+						</div>
+					</a>
+					<a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+				</div>
+			</li>
+
+			<div class="topbar-divider d-none d-sm-block"></div>
+
+			<!-- Nav Item - User Information -->
+			<li class="nav-item dropdown no-arrow">
+				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="mr-2 d-none d-lg-inline text-gray-100 small">Admin</span>
+					<img class="img-profile rounded-circle" src="resource/images/default-avatar.png">
+				</a>
+				<!-- Dropdown - User Information -->
+				<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+					<a class="dropdown-item" href="profile.html">
+						<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+						Profile
+					</a>
+					<a class="dropdown-item" href="favourites.html">
+						<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+						Favourite
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+						Activity Log
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Login
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Logout
+					</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<!-- End of Topbar -->
+	
+   <main role="main" class="container-fluid">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+					<div class="MultiCarousel-inner">
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Multi</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Item</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Multi</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Item</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Multi</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Item</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Multi</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Item</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Multi</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Item</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="pad15">
+								<p class="lead">Carousel</p>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-primary leftLst"><i class="fas fa-chevron-left"></i></button>
+					<button class="btn btn-primary rightLst"><i class="fas fa-chevron-right"></i></button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="filter_icon">
+			<a href="#filter"><i class="fas fa-sliders-h"></i></a>
+		</div>
+		<div id="filter" class="container filter_section">
+			<div class="row">
+				<div class="col-md-3 mb-3">
+					<div id="accordion" role="tablist">
+						<div class="card filter_box">
+							<div class="card-header" role="tab" id="headingOne">
+								<h6 class="mb-0">
+									<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  Select Here....
+									</a>
+								</h6>
+							</div>
+
+							<div id="collapseOne" class="collapse show mobile_filter" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<ul class="list-inline m-0">
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3 mb-3">
+					<div id="accordion" role="tablist">
+						<div class="card filter_box">
+							<div class="card-header" role="tab" id="headingOne">
+								<h6 class="mb-0">
+									<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  Select Here....
+									</a>
+								</h6>
+							</div>
+							<div id="collapseOne" class="collapse show mobile_filter" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<ul class="list-inline m-0">
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3 mb-3">
+					<div id="accordion" role="tablist">
+						<div class="card filter_box">
+							<div class="card-header" role="tab" id="headingOne">
+								<h6 class="mb-0">
+									<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  Select Here....
+									</a>
+								</h6>
+							</div>
+
+							<div id="collapseOne" class="collapse show mobile_filter" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<ul class="list-inline m-0">
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3 mb-3">
+					<div id="accordion" role="tablist">
+						<div class="card filter_box">
+							<div class="card-header" role="tab" id="headingOne">
+								<h6 class="mb-0">
+									<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									  Select Here....
+									</a>
+								</h6>
+							</div>
+
+							<div id="collapseOne" class="collapse show mobile_filter" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+								<div class="card-body">
+									<ul class="list-inline m-0">
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+										<li>
+											<div class="custom-control custom-checkbox py-2">
+												<input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+												<label class="custom-control-label" for="customCheck">checkbox</label>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row effects clearfix" id="effect-1">
+			<div class="wall">
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/01.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 1</h4>
+						<p class="pull-right">Genre: <b>Romance</b></p>
+						<ul class="inline-list">
+							<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/2.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 2</h4>
+						<p class="pull-right">Genre: <b>Comedy</b></p>
+						<ul class="inline-list">
+							<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/3.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 3</h4>
+						<p class="pull-right">Genre: <b>Family</b></p>
+						<ul class="inline-list">
+							<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/4.jpg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 4</h4>
+						<p class="pull-right">Genre: <b>Action</b></p>
+						<ul class="inline-list">
+							<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/5.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 5</h4>
+						<p class="pull-right">Genre: <b>Drama</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/6.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 6</h4>
+						<p class="pull-right">Genre: <b>Romance</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/7.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 7</h4>
+						<p class="pull-right">Genre: <b>Comedy</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/8.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love1</h4>
+						<p class="pull-right">Genre: <b>Comedy</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/9.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Couple</h4>
+						<p class="pull-right">Genre: <b>Family</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/10.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love2</h4>
+						<p class="pull-right">Genre: <b>Comedy</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/11.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Women 1</h4>
+						<p class="pull-right">Genre: <b>Action</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/12.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Women 2</h4>
+						<p class="pull-right">Genre: <b>Romance</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/13.jpg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Indian Women</h4>
+						<p class="pull-right">Genre: <b>Horror</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/14.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>Women 3</h4>
+						<p class="pull-right">Genre: <b>Romance</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/15.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>CITY SCAPE</h4>
+						<p class="pull-right">Genre: <b>Horror</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/16.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 1</h4>
+						<p class="pull-right">Genre: <b>Family</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/17.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 11</h4>
+						<p class="pull-right">Genre: <b>Drama</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/18.jpeg" alt="" class="img-responsive"></a>
+						
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 1</h4>
+						<p class="pull-right">Genre: <b>Comedy</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/19.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 2</h4>
+						<p class="pull-right">Genre: <b>Action</b></p>
+						<ul class="inline-list">
+							<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+							<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+							<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </main> 
+	
+	
+	<div class="clearfix"></div>
+
+
+<div class="container">
+	<div class="content content--main clearfix">
+		<div class="box">
+			<h2 class="box__title">Marin</h2>
+			<button class="cbutton cbutton--effect-marin">
+				<i class="cbutton__icon fa fa-fw fa-star"></i>
+				<span class="cbutton__text">Fav</span>
+			</button>
+			<button class="cbutton cbutton--effect-marin">
+				<i class="cbutton__icon fa fa-fw fa-flag"></i>
+				<span class="cbutton__text">Flag</span>
+			</button>
+			<button class="cbutton cbutton--effect-marin">
+				<i class="cbutton__icon fa fa-fw fa-thumbs-up"></i>
+				<span class="cbutton__text">Like</span>
+			</button>
+		</div>
+		<div class="box">
+			<h2 class="box__title">Radomir</h2>
+			<button class="cbutton cbutton--effect-like">
+				<i class="cbutton__icon fa fa-fw fa-save"></i>
+				<span class="cbutton__text">Save</span>
+			</button>
+			<button class="cbutton cbutton--effect-like">
+				<i class="cbutton__icon fa fa-fw fa-copy"></i>
+				<span class="cbutton__text">Copy</span>
+			</button>
+			<button class="cbutton cbutton--effect-like">
+				<i class="cbutton__icon fa fa-fw fa-paste"></i>
+				<span class="cbutton__text">Paste</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+
+
+
+<style>
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+</style>
+
+
+<ul>
+  <li><input type="checkbox" id="cb1" />
+    <label for="cb1"><img src="http://lorempixel.com/100/100" /></label>
+  </li>
+  <li><input type="checkbox" id="cb2" />
+    <label for="cb2"><img src="http://lorempixel.com/101/101" /></label>
+  </li>
+  <li><input type="checkbox" id="cb3" />
+    <label for="cb3"><img src="http://lorempixel.com/102/102" /></label>
+  </li>
+  <li><input type="checkbox" id="cb4" />
+    <label for="cb4"><img src="http://lorempixel.com/103/103" /></label>
+  </li>
+</ul>
+
+<!--
+<style>
+.nopad {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+/*image gallery*/
+.image-checkbox {
+	cursor: pointer;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 4px solid transparent;
+	margin-bottom: 0;
+	outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.image-checkbox-checked {
+	border-color: #4783B0;
+}
+.image-checkbox .fa {
+  position: absolute;
+  color: #4A79A3;
+  background-color: #fff;
+  padding: 10px;
+  top: 0;
+  right: 0;
+}
+.image-checkbox-checked .fa {
+  display: block !important;
+}
+</style>
+
+<div class="container">
+  <h3>Bootstrap image checkbox(multiple)</h3>
+  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+    <label class="image-checkbox">
+      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
+      <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+  </div>
+  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+    <label class="image-checkbox">
+      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
+      <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+  </div>
+  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+    <label class="image-checkbox">
+      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
+      <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+  </div>
+  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+    <label class="image-checkbox">
+      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
+      <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+  </div>
+  <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+    <label class="image-checkbox">
+      <img class="img-responsive" src="https://dummyimage.com/600x400/000/fff" />
+      <input type="checkbox" name="image[]" value="" />
+      <i class="fa fa-check hidden"></i>
+    </label>
+  </div>
+
+</div>
+
+-->
+
+
+
+<button class="bubbly-button">Click me!</button>
+
+<ul class="inline-list">
+	<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+	<li><span class="cbutton cbutton--effect-dislike"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+	<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i></span> 10</li>
+</ul>
+
+	<ul class="list-inline">
+		<li><a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Top</a></li>
+		<li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!">Bottom</a></li>
+		<li><a href="#" data-toggle="tooltip" data-placement="left" title="Hooray!">Left</a></li>
+		<li><a href="#" data-toggle="tooltip" data-placement="right" title="Hooray!">Right</a></li>
+	</ul>
+    <!-- /.container -->
+	
+    <!-- <script src="resource/js/jquery-3.3.1.slim.min.js"></script> -->
+	<script type="text/javascript" src="resource/js/jquery3.3.1.min.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="resource/js/wow.min.js"></script>
+	<script type="text/javascript" src="resource/js/jaliswall.js"></script>
+	<script type="text/javascript" src="resource/js/modernizr.custom.js" ></script>
+	<script type="text/javascript" src="resource/js/custom.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+  </body>
+	
+	<script>
+	// image gallery
+// init the state from the input
+$(".image-checkbox").each(function () {
+  if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+    $(this).addClass('image-checkbox-checked');
+  }
+  else {
+    $(this).removeClass('image-checkbox-checked');
+  }
+});
+
+// sync the state to the input
+$(".image-checkbox").on("click", function (e) {
+  $(this).toggleClass('image-checkbox-checked');
+  var $checkbox = $(this).find('input[type="checkbox"]');
+  $checkbox.prop("checked",!$checkbox.prop("checked"))
+
+  e.preventDefault();
+});
+	
+	 wow = new WOW(
+	 {
+	
+		}	) 
+		.init(); 
+	</script>
+
+	<script>$('.wall').jaliswall({item:'.wall-item'});</script>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+				<a class="btn btn-primary" href="login.html">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<div class="modal fade my-auto"  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin">
+						<div class="card-body">
+							<h5 class="card-title text-center">Sign In</h5>
+							<form class="form-signin">
+								<div class="form-label-group">
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<label for="inputEmail">Email address</label>
+								</div>
+
+								<div class="form-label-group">
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<label for="inputPassword">Password</label>
+								</div>
+
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<label class="custom-control-label" for="customCheck1">Remember password</label>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Or login with
+									</span>
+								</div>
+								<button class="btn btn-lg btn-facebook btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook</button>
+								<button class="btn btn-lg btn-google btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Google</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Not a member?
+									</span>
+									<a class="txt1 bo1 hov1" href="#">
+										Sign up now							
+									</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade my-auto"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin ">
+						<div class="card-body">
+							<div class="row text-center share_btn">
+								<div class="col-sm-3 col-4">
+									<a class="fb" href="">
+										<i class="fab fa-facebook-f"></i>
+										<p>facebook</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="twit" href="">
+										<i class="fab fa-twitter"></i>
+										<p>twitter</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="google" href="">
+										<i class="fab fa-google-plus-g"></i>
+										<p>google +</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="blog" href="">
+										<i class="fab fa-blogger-b"></i>
+										<p>blogger</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="reddit" href="">
+										<i class="fab fa-reddit-alien"></i>
+										<p>reddit</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="tumblr" href="">
+										<i class="fab fa-tumblr"></i>
+										<p>tumblr</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="pinterest" href="">
+										<i class="fab fa-pinterest-p"></i>
+										<p>pinterest</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="linkedin" href="">
+										<i class="fab fa-linkedin-in"></i>
+										<p>linkedin</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="mix" href="">
+										<i class="fab fa-mix"></i>
+										<p>Mix</p>
+									</a>
+								</div>
+								<div class="col-sm-3 col-4">
+									<a class="envelope" href="">
+										<i class="far fa-envelope"></i>	
+										<p>E-Mail</p>
+									</a>
+								</div>
+							</div>
+
+							<div class="">										
+								<div class="input-group mb-3">
+									<input type="text" class="form-control copy_input"  id="linkCopy" value="https://testlink.com/id=1234" readonly />
+									<div class="input-group-append">
+										<button class="btn btn-success copy_btn" data-copytarget="#linkCopy" data-toggle="tooltip" data-placement="bottom" title="Click to copy!" >copy</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>	
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

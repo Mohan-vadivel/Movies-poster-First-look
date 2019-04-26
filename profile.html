@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="generator" content=""/>
+    <title>Trend Beee</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+	<link rel="stylesheet" type="text/css" href="resource/fontawesome-free/css/all.min.css" >	
+    <link rel="stylesheet" type="text/css" href="resource/css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="resource/css/main.css" />
+
+</head>
+<body>
+	<!-- Topbar -->
+	<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 fixed-top shadow">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="index.html">
+			<img src="resource/images/logo.png" alt="logo" style="width:45px;">
+		</a>
+		<form class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 text-center navbar-search" action="search.html">
+			<div class="input-group">
+				<input type="text" class="form-control bg-light border-0 small left-radius" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+				<span class="input-group-addon border-left-0 search_icon"><i class="fas fa-search fa-fw"></i></span>
+			</div>
+		</form>
+		<!-- Topbar Navbar -->
+		<ul class="navbar-nav ml-auto">
+			<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+			<li class="nav-item dropdown no-arrow d-sm-none">
+				<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-search fa-fw"></i>
+				</a>
+				<!-- Dropdown - Messages -->
+				<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+					<form class="form-inline mr-auto w-100 navbar-search">
+						<div class="input-group">
+						<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</li>
+
+			<!-- Nav Item - Alerts -->
+			<li class="nav-item dropdown no-arrow mx-1">
+				<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-bell fa-fw"></i>
+					<span class="badge badge-danger badge-counter">3+</span>
+				</a>
+				<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+					<h6 class="dropdown-header">Alerts Center</h6>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-primary">
+								<i class="fas fa-file-alt text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 12, 2019</div>
+							<span class="font-weight-bold">A new monthly report is ready to download!</span>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-success">
+								<i class="fas fa-donate text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 7, 2019</div>
+							$290.29 has been deposited into your account!
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-warning">
+								<i class="fas fa-exclamation-triangle text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 2, 2019</div>
+							Spending Alert: We've noticed unusually high spending for your account.
+						</div>
+					</a>
+					<a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+				</div>
+			</li>
+			
+			<div class="topbar-divider d-none d-sm-block"></div>
+
+			<!-- Nav Item - User Information -->
+			<li class="nav-item dropdown no-arrow">
+				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="mr-2 d-none d-lg-inline text-gray-100 small">Admin</span>
+					<img class="img-profile rounded-circle" src="resource/images/default-avatar.png">
+				</a>
+				<!-- Dropdown - User Information -->
+				<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+					<a class="dropdown-item" href="profile.html">
+						<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+						Profile
+					</a>
+					<a class="dropdown-item" href="favourites.html">
+						<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+						Favourite
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+						Activity Log
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Login
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Logout
+					</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+
+    <main role="main" class="container-fluid">
+		<!-- Button trigger modal -->
+		<div class="container profile_section">
+			<div class="row">
+				<div class="col-md-3 bg-white radius-8 marginb-3">
+					<div class="py-3">
+						<div class="col-md-12 align-items-center  justify-content-between mb-3">
+							<div class="circle m-auto">
+								<img class="profile-pic" src="resource/images/default-avatar.png">
+								<div class="overlay">
+									<div class="p-image te">
+										<i class="fa fa-camera upload-button"></i>
+										<input class="file-upload" type="file" accept="image/*"/>
+									</div>
+								</div>
+							</div>
+							<div class="text-center">
+								<div class="username font-weight-600 py-2">@John Doe</div>
+							</div>
+						</div>
+						<ul class="nav nav-tabs col" id="myTab" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" data-toggle="tab" href="#Profile" role="tab" aria-controls="Profile">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#Password" role="tab" aria-controls="Password">Password</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#Account" role="tab" aria-controls="Account">Account's</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" data-toggle="tab" href="#Privacy" role="tab" aria-controls="Privacy">Privacy</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+
+				<div class="col-md-9 mp-0">
+					<div class="tab-content bg-white radius-8 p-3">
+						<div class="tab-pane active" id="Profile" role="tabpanel">
+							<h5 class="py-3">Edit Profile</h5>
+							<form method="post" class="form-horizontal" action="">
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">First Name<span class="colon">:</span></label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="First Name" value="Mohan" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">Last Name</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Last Name" value="Vadivel" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center user-name">
+										<label class="col-sm-4 font-weight-600">User Name</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="User Name" value="Mohanvadivel" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">About</label>
+										<div class="col-sm-6">
+											<textarea type="text" class="form-control" maxlength="160" rows="3" placeholder="About "></textarea>
+											<p></p>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">Mail</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Mail Id" value="vadivelmohan2@gmail.com" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">Mobile</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Mobile No" value="9047079148" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">Gender</label>
+										<div class="col-sm-6">
+											<select class="form-control" name="Gender">
+												<option value="">-- Select Gender --</option>
+												<option value="" selected>Male</option>
+												<option value="">Female</option>
+												<option value="">Transgender</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" class="btn btn-primary" data-toggle="tab" href="#Password" role="tab" aria-controls="Password">Save & Next</button>
+									<button type="reset" class="btn btn-secondary">Reset</button>
+								</div>
+							</form>	
+						</div>
+						
+						<div class="tab-pane" id="Password" role="tabpanel">
+							<h5 class="py-3">Change Password</h5>
+							<form method="post" class="form-horizontal" action="">
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">Current Password</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 font-weight-600">New Password</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center user-name">
+										<label class="col-sm-4 font-weight-600">Confirm Password</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" />
+										</div>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" class="btn btn-primary" data-toggle="tab" href="#Account" role="tab" aria-controls="Account">Save & Next</button>
+									<button type="reset" class="btn btn-secondary">Reset</button>
+								</div>
+							</form>
+						</div>					
+						
+						<div class="tab-pane" id="Account" role="tabpanel">
+							<h5 class="py-3">Account Settings</h5>
+							<form method="post" class="form-horizontal" action="">
+								<h6 class="pb-3">Login Options</h6>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4 ">Login with facebook</label>
+										<div class="col-sm-6">
+											<div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input" id="fb-login" name="example">
+												<label class="custom-control-label" for="fb-login">Yes</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center user-name">
+										<label class="col-sm-4">Login with Google</label>
+										<div class="col-sm-6">
+											<div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input" id="g-login" name="example">
+												<label class="custom-control-label" for="g-login">Yes</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<h6 class="pb-3">Account's Options</h6>
+								<div class="form-group">
+									<div class="row align-items-center ">
+										<label class="col-sm-4">Temporary hide your profile</label>
+										<div class="col-sm-6">
+											<button type="button" class="btn btn-warning">Deactivate</button>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center user-name">
+										<label class="col-sm-4">Permanently close your profile</label>
+										<div class="col-sm-6">
+											<button type="button" class="btn btn-danger">Delete</button>
+										</div>
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="button" class="btn btn-primary" data-toggle="tab" href="#Privacy" role="tab" aria-controls="Privacy">Save & Next</button>
+									<button type="reset" class="btn btn-secondary">Reset</button>
+								</div>
+							</form>
+						</div>
+						
+						<div class="tab-pane" id="Privacy" role="tabpanel">
+							<h5 class="py-3">Privacy & Terms</h5>
+							Thanks...
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+
+    </main>
+
+
+    <!-- /.container -->
+	
+    <script src="resource/js/jquery-3.3.1.slim.min.js"></script>   
+	<!-- <script type="text/javascript" src="resource/js/jquery3.3.1.min.js"></script> --> 
+    <script type="text/javascript" src="resource/js/bootstrap.bundle.min.js"></script>	
+	<script type="text/javascript" src="resource/js/wow.min.js"></script>
+	<script type="text/javascript" src="resource/js/jaliswall.js"></script>
+	<script type="text/javascript" src="resource/js/modernizr.custom.js" ></script>
+	<script type="text/javascript" src="resource/js/custom.js"></script>
+
+
+
+<script>
+/*
+$(document).ready(function() {
+
+var PictureUpdate = (function () {
+    function PictureUpdate() {
+        this.profile = $('.profile-pic'); //direct parent
+        this.cover = $('.cover'); //direct parent
+        this.updateProfile();
+        this.updateCover();
+    }
+    PictureUpdate.prototype.updateProfile = function () {
+        var _this = this;
+        var input = $('input', this.profile);
+        input.change(function (e) {
+            var img = URL.createObjectURL(e.target.files[0]);
+            _this.fireAJAX(null, img, _this.profile);
+        });
+    };
+    PictureUpdate.prototype.updateCover = function () {
+        var _this = this;
+        var input = $('input', this.cover);
+        input.change(function (e) {
+            var img = URL.createObjectURL(e.target.files[0]);
+            _this.fireAJAX(null, img, _this.cover);
+        });
+    };
+    PictureUpdate.prototype.fireAJAX = function (url, data, element) {
+        var _this = this;
+        $.ajax({
+            type: "POST",
+            data: data,
+            beforeSend: function () {
+                _this.startLoader(element);
+            },
+            success: function () {
+                setTimeout(function () {
+                    _this.destroyLoader(element);
+                    $('> img', element).attr("src", data);
+                }, 2000);
+            }
+        });
+    };
+    PictureUpdate.prototype.startLoader = function (element) {
+        var loader = $('.layer', element);
+        loader.addClass("visible");
+    };
+    PictureUpdate.prototype.destroyLoader = function (element) {
+        var loader = $('.layer', element);
+        loader.removeClass("visible");
+    };
+    return PictureUpdate;
+}());
+new PictureUpdate();
+});
+
+*/
+
+
+$(document).ready(function() {
+
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.profile-pic').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    
+    $(".upload-button").on('click', function() {
+       $(".file-upload").click();
+    });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("p").hover(function(){
+    $(this).css("background-color", "yellow");
+    }, function(){
+    $(this).css("background-color", "pink");
+  });
+});
+</script>
+<!--	
+<script>
+	/****Animations****/
+	wow = new WOW(
+		{
+			boxClass:     'wow',      // default
+			animateClass: 'animated', // default
+			offset:       0,          // default
+			mobile:       true,       // default
+			live:         true        // default
+		}
+	)
+	wow.init();	
+	/****Animations****/
+
+</script>
+-->
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+				<a class="btn btn-primary" href="login.html">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Logout Modal-->
+	
+
+<!-- Share Modal-->
+<div class="modal fade my-auto"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin ">
+						<div class="card-body">
+							<div class="row text-center share_btn">
+								<div class="col-3">
+									<a class="fb" href="">
+										<i class="fab fa-facebook-f"></i>
+										<p>facebook</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="twit" href="">
+										<i class="fab fa-twitter"></i>
+										<p>twitter</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="google" href="">
+										<i class="fab fa-google-plus-g"></i>
+										<p>google +</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="blog" href="">
+										<i class="fab fa-blogger-b"></i>
+										<p>blogger</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="reddit" href="">
+										<i class="fab fa-reddit-alien"></i>
+										<p>reddit</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="tumblr" href="">
+										<i class="fab fa-tumblr"></i>
+										<p>tumblr</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="pinterest" href="">
+										<i class="fab fa-pinterest-p"></i>
+										<p>pinterest</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="linkedin" href="">
+										<i class="fab fa-linkedin-in"></i>
+										<p>linkedin</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="mix" href="">
+										<i class="fab fa-mix"></i>
+										<p>Mix</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="envelope" href="">
+										<i class="far fa-envelope"></i>	
+										<p>E-Mail</p>
+									</a>
+								</div>
+							</div>
+
+							<div class="">										
+								<div class="input-group mb-3">
+									<input type="text" class="form-control copy_input"  id="linkCopy" value="https://testlink.com/id=1234" readonly />
+									<div class="input-group-append">
+										<button class="btn btn-success copy_btn" data-copytarget="#linkCopy" data-toggle="tooltip" data-placement="bottom" title="Click to copy!" >copy</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>	
+</div>
+<!-- Share Modal-->
+
+</body>
+</html>

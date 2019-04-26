@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="generator" content=""/>
+    <title>Trend Beee</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="resource/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" />
+	<link rel="stylesheet" type="text/css" href="resource/fontawesome-free/css/all.min.css" >	
+    <link rel="stylesheet" type="text/css" href="resource/css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="resource/css/main.css" />
+	
+	
+</head>
+<body>
+	<!-- Topbar -->
+	<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 fixed-top shadow">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="index.html">
+			<img src="resource/images/logo.png" alt="logo" style="width:45px;">
+		</a>
+		
+		<form class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 text-center navbar-search" action="search.html">
+			<div class="input-group">
+				<input type="text" class="form-control bg-light border-0 small left-radius" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+				<span class="input-group-addon border-left-0 search_icon"><i class="fas fa-search fa-fw"></i></span>
+			</div>
+		</form>
+		<!-- Topbar Navbar -->
+		<ul class="navbar-nav ml-auto">
+			<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+			<li class="nav-item dropdown no-arrow d-sm-none">
+				<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-search fa-fw"></i>
+				</a>
+				<!-- Dropdown - Messages -->
+				<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+					<form class="form-inline mr-auto w-100 navbar-search">
+						<div class="input-group">
+						<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</li>
+
+			<!-- Nav Item - Alerts -->
+			<li class="nav-item dropdown no-arrow mx-1">
+				<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-bell fa-fw"></i>
+					<span class="badge badge-danger badge-counter">3+</span>
+				</a>
+				<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+					<h6 class="dropdown-header">Alerts Center</h6>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-primary">
+								<i class="fas fa-file-alt text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 12, 2019</div>
+							<span class="font-weight-bold">A new monthly report is ready to download!</span>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-success">
+								<i class="fas fa-donate text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 7, 2019</div>
+							$290.29 has been deposited into your account!
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-warning">
+								<i class="fas fa-exclamation-triangle text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 2, 2019</div>
+							Spending Alert: We've noticed unusually high spending for your account.
+						</div>
+					</a>
+					<a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+				</div>
+			</li>
+			<div class="topbar-divider d-none d-sm-block"></div>
+
+			<!-- Nav Item - User Information -->
+			<li class="nav-item dropdown no-arrow">
+				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="mr-2 d-none d-lg-inline text-gray-100 small">Admin</span>
+					<img class="img-profile rounded-circle" src="resource/images/default-avatar.png">
+				</a>
+				<!-- Dropdown - User Information -->
+				<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+					<a class="dropdown-item" href="profile.html">
+						<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+						Profile
+					</a>
+					<a class="dropdown-item" href="favourites.html">
+						<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+						Favourite
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+						Activity Log
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Login
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Logout
+					</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<!-- End of Topbar -->
+    <main role="main" class="container-fluid">
+		<!-- List grid Image -->
+		<div class="row effects clearfix" id="effect-1">
+			<div class="wall">
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/01.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 1</h4>
+						<p>Genre: <b>Romance</b> <span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/2.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 2</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/3.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 3</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/4.jpg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 4</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/5.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 5</h4>
+						<p>Genre: <b>Drama</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/6.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 6</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/7.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 7</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/8.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love1</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/9.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Couple</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/10.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love2</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/11.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 1</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/12.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 2</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/13.jpg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Indian Women</h4>
+						<p>Genre: <b>Horror</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/14.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 3</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/15.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>CITY SCAPE</h4>
+						<p>Genre: <b>Horror</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/16.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 1</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/17.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 11</h4>
+						<p>Genre: <b>Drama</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/18.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 1</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/19.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 2</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/20.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 1</h4>
+						<p>Genre: <b>Romance</b> <span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/21.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 2</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/22.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 3</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/23.jpg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 4</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/24.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 5</h4>
+						<p>Genre: <b>Drama</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/25.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 6</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/26.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Composition 7</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/27.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love1</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/28.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Couple</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/29.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Tune of Love2</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/30.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 1</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/31.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 2</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/31.jpg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Indian Women</h4>
+						<p>Genre: <b>Horror</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/32.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>Women 3</h4>
+						<p>Genre: <b>Romance</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/33.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>CITY SCAPE</h4>
+						<p>Genre: <b>Horror</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/34.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 1</h4>
+						<p>Genre: <b>Family</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/35.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 11</h4>
+						<p>Genre: <b>Drama</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/36.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 1</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/37.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 2</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/38.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>LANDSCAPE 11</h4>
+						<p>Genre: <b>Drama</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/39.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 1</h4>
+						<p>Genre: <b>Comedy</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="wall-item wow fadeInUp">
+					<div class="img">
+						<a href="inner.html"><img src="resource/images/poster/40.jpeg" alt="" class="img-responsive"></a>
+					</div>
+					<div class="thirdrow">
+						<h4>BANDMASTER 2</h4>
+						<p>Genre: <b>Action</b><span class="float-right"><span class="badge badge-warning ">4.5 <i class="fas fa-star"></i></span></span></p>
+						<ul class="inline-list">
+							<li><span class="cbutton cbutton--effect-like heart"><i class="fas fa-heart cbutton__icon"></i></span> 30 K</li>
+							<li><span class="cbutton cbutton--effect-like"><i class="fas fa-heart-broken cbutton__icon"></i></span> 18 K</li>
+							<li><span data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+    </main>
+
+
+    <!-- /.container -->
+	
+    <!-- <script src="resource/js/jquery-3.3.1.slim.min.js"></script> -->    
+	<script type="text/javascript" src="resource/js/jquery3.3.1.min.js"></script>
+    <script type="text/javascript" src="resource/js/bootstrap.bundle.min.js"></script>	
+	<script type="text/javascript" src="resource/js/wow.min.js"></script>
+	<script type="text/javascript" src="resource/js/jaliswall.js"></script>
+	<script type="text/javascript" src="resource/js/modernizr.custom.js" ></script>
+	<script type="text/javascript" src="resource/js/custom.js"></script>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+				<a class="btn btn-primary" href="login.html">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Logout Modal-->
+	
+<!-- Login Modal-->
+<div class="modal fade my-auto"  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin">
+						<div class="card-body">
+							<h5 class="card-title text-center">Sign In</h5>
+							<form class="form-signin">
+								<div class="form-label-group">
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<label for="inputEmail">Email address</label>
+								</div>
+
+								<div class="form-label-group">
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<label for="inputPassword">Password</label>
+								</div>
+
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<label class="custom-control-label" for="customCheck1">Remember password</label>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Or login with
+									</span>
+								</div>
+								<button class="btn btn-lg btn-facebook btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook</button>
+								<button class="btn btn-lg btn-google btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Google</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Not a member?
+									</span>
+									<a class="txt1 bo1 hov1" href="#">
+										Sign up now							
+									</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login Modal-->
+
+<!-- Share Modal-->
+<div class="modal fade my-auto"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin ">
+						<div class="card-body">
+							<div class="row text-center share_btn">
+								<div class="col-3">
+									<a class="fb" href="">
+										<i class="fab fa-facebook-f"></i>
+										<p>facebook</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="twit" href="">
+										<i class="fab fa-twitter"></i>
+										<p>twitter</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="google" href="">
+										<i class="fab fa-google-plus-g"></i>
+										<p>google +</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="blog" href="">
+										<i class="fab fa-blogger-b"></i>
+										<p>blogger</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="reddit" href="">
+										<i class="fab fa-reddit-alien"></i>
+										<p>reddit</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="tumblr" href="">
+										<i class="fab fa-tumblr"></i>
+										<p>tumblr</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="pinterest" href="">
+										<i class="fab fa-pinterest-p"></i>
+										<p>pinterest</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="linkedin" href="">
+										<i class="fab fa-linkedin-in"></i>
+										<p>linkedin</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="mix" href="">
+										<i class="fab fa-mix"></i>
+										<p>Mix</p>
+									</a>
+								</div>
+								<div class="col-3">
+									<a class="envelope" href="">
+										<i class="far fa-envelope"></i>	
+										<p>E-Mail</p>
+									</a>
+								</div>
+							</div>
+
+							<div class="">										
+								<div class="input-group mb-3">
+									<input type="text" class="form-control copy_input"  id="linkCopy" value="https://testlink.com/id=1234" readonly />
+									<div class="input-group-append">
+										<button class="btn btn-success copy_btn" data-copytarget="#linkCopy" data-toggle="tooltip" data-placement="bottom" title="Click to copy!" >copy</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>	
+</div>
+<!-- Share Modal-->
+
+</body>
+</html>
