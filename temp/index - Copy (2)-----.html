@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Trend Beee</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="resource/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	
+	
+    <link href="resource/css/animate.css" rel="stylesheet">
+		<link href="resource/css/main.css" rel="stylesheet">
+ <!--<link href="resource/css/component.css" rel="stylesheet"> -->
+	<!-- <link href="resource/css/responsive.css" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="resource/js/jquery-1.11.0.min.js"></script> 
+	<script src="resource/js/modernizr.js"></script>-->
+
+<style>
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+	<!-- Topbar -->
+	<nav class="navbar navbar-expand navbar-light bg-white topbar mb-2 static-top shadow">
+		<!-- Brand/logo -->
+		<a class="navbar-brand" href="index.html">
+			<img src="resource/images/logo.png" alt="logo" style="width:45px;">
+		</a>
+		<!-- Topbar Search -->
+		<!-- <form class="d-none d-sm-inline-block form-inline mx-auto my-2 my-md-0 mw-100 text-center navbar-search">
+			<div class="input-group">
+				<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<button class="btn btn-search" type="button">
+						<i class="fas fa-search fa-sm"></i>
+					</button>
+				</div>
+			</div>
+		</form> -->
+		
+		<form class="d-none d-sm-inline-block form-inline ml-auto my-2 my-md-0 mw-100 text-center navbar-search" action="search.html">
+			<div class="input-group">
+				<input type="text" class="form-control bg-light border-0 small left-radius" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+				<span class="input-group-addon border-left-0 search_icon"><i class="fas fa-search fa-fw"></i></span>
+			</div>
+		</form>
+		<!-- Topbar Navbar -->
+		<ul class="navbar-nav ml-auto">
+			<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+			<li class="nav-item dropdown no-arrow d-sm-none">
+				<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-search fa-fw"></i>
+				</a>
+				<!-- Dropdown - Messages -->
+				<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+					<form class="form-inline mr-auto w-100 navbar-search">
+						<div class="input-group">
+						<input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-primary" type="button">
+									<i class="fas fa-search fa-sm"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</li>
+
+			<!-- Nav Item - Alerts -->
+			<li class="nav-item dropdown no-arrow mx-1">
+				<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-bell fa-fw"></i>
+					<span class="badge badge-danger badge-counter">3+</span>
+				</a>
+				<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+					<h6 class="dropdown-header">Alerts Center</h6>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-primary">
+								<i class="fas fa-file-alt text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 12, 2019</div>
+							<span class="font-weight-bold">A new monthly report is ready to download!</span>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-success">
+								<i class="fas fa-donate text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 7, 2019</div>
+							$290.29 has been deposited into your account!
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="mr-3">
+							<div class="icon-circle bg-warning">
+								<i class="fas fa-exclamation-triangle text-white"></i>
+							</div>
+						</div>
+						<div>
+							<div class="small text-gray-500">December 2, 2019</div>
+							Spending Alert: We've noticed unusually high spending for your account.
+						</div>
+					</a>
+					<a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+				</div>
+			</li>
+
+			<!-- Nav Item - Messages -->
+			<!-- <li class="nav-item dropdown no-arrow mx-1">
+				<a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-envelope fa-fw"></i>
+					<span class="badge badge-danger badge-counter">7</span>
+				</a>
+				<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+					<h6 class="dropdown-header">Message Center</h6>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="dropdown-list-image mr-3">
+							<img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+							<div class="status-indicator bg-success"></div>
+						</div>
+						<div class="font-weight-bold">
+							<div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+							<div class="small text-gray-500">Emily Fowler · 58m</div>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="dropdown-list-image mr-3">
+							<img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+							<div class="status-indicator"></div>
+						</div>
+						<div>
+							<div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+							<div class="small text-gray-500">Jae Chun · 1d</div>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="dropdown-list-image mr-3">
+							<img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+							<div class="status-indicator bg-warning"></div>
+						</div>
+						<div>
+							<div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+							<div class="small text-gray-500">Morgan Alvarez · 2d</div>
+						</div>
+					</a>
+					<a class="dropdown-item d-flex align-items-center" href="#">
+						<div class="dropdown-list-image mr-3">
+							<img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+							<div class="status-indicator bg-success"></div>
+						</div>
+						<div>
+							<div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+							<div class="small text-gray-500">Chicken the Dog · 2w</div>
+						</div>
+					</a>
+					<a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+				</div>
+			</li> -->
+
+			<div class="topbar-divider d-none d-sm-block"></div>
+
+			<!-- Nav Item - User Information -->
+			<li class="nav-item dropdown no-arrow">
+				<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="mr-2 d-none d-lg-inline text-gray-100 small">Admin</span>
+					<img class="img-profile rounded-circle" src="resource/images/default-avatar.png">
+				</a>
+				<!-- Dropdown - User Information -->
+				<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+						Profile
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+						Settings
+					</a>
+					<a class="dropdown-item" href="#">
+						<i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+						Activity Log
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Login
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+						Logout
+					</a>
+				</div>
+			</li>
+		</ul>
+	</nav>
+	<!-- End of Topbar -->
+    <!-- <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav> -->
+    <main role="main" class="container-fluid">
+			<div class="row effects clearfix" id="effect-1">
+				<div class="wall">
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/01.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 1</h4>
+							<p class="pull-right">Genre: <b>Romance</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/2.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 2</h4>
+							<p class="pull-right">Genre: <b>Comedy</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/3.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 3</h4>
+							<p class="pull-right">Genre: <b>Family</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/4.jpg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 4</h4>
+							<p class="pull-right">Genre: <b>Action</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/5.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 5</h4>
+							<p class="pull-right">Genre: <b>Drama</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/6.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 6</h4>
+							<p class="pull-right">Genre: <b>Romance</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/7.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Composition 7</h4>
+							<p class="pull-right">Genre: <b>Comedy</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/8.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Tune of Love1</h4>
+							<p class="pull-right">Genre: <b>Comedy</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/9.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Couple</h4>
+							<p class="pull-right">Genre: <b>Family</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/10.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Tune of Love2</h4>
+							<p class="pull-right">Genre: <b>Comedy</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/11.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Women 1</h4>
+							<p class="pull-right">Genre: <b>Action</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/12.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Women 2</h4>
+							<p class="pull-right">Genre: <b>Romance</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/13.jpg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Indian Women</h4>
+							<p class="pull-right">Genre: <b>Horror</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/14.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>Women 3</h4>
+							<p class="pull-right">Genre: <b>Romance</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/15.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>CITY SCAPE</h4>
+							<p class="pull-right">Genre: <b>Horror</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/16.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>LANDSCAPE 1</h4>
+							<p class="pull-right">Genre: <b>Family</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/17.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>LANDSCAPE 11</h4>
+							<p class="pull-right">Genre: <b>Drama</b></p>
+							<p>by <b>Ashoke Mullick</b></p>
+							<ul class="inline-list">
+								<li><a href=""><i class="fas fa-heart"></i> 30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/18.jpeg" alt="" class="img-responsive"></a>
+							
+						</div>
+						<div class="thirdrow">
+							<h4>BANDMASTER 1</h4>
+							<p class="pull-right">Genre: <b>Comedy</b></p>
+							<ul class="inline-list">
+								<li><a class="bubbly-button"><i class="fas fa-heart"></i> p30 K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="wall-item">
+						<div class="img">
+							<a href="inner.html"><img src="resource/images/poster/19.jpeg" alt="" class="img-responsive"></a>
+						</div>
+						<div class="thirdrow">
+							<h4>BANDMASTER 2</h4>
+							<p class="pull-right">Genre: <b>Action</b></p>
+							<ul class="inline-list">
+								<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30. K</a></li>
+								<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+								<li><a href=""><i class="fas fa-share-square"></i> 10</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+    </main>
+
+
+<button class="bubbly-button">Click me!</button>
+
+<ul class="inline-list">
+	<li><a class="bubbly-button"><i class="fas fa-heart"></i> 30 K</a></li>
+	<li><a href=""><i class="fas fa-heart-broken"></i> 18 K</a></li>
+	<li><a href="#" data-toggle="modal" data-target="#shareModal"><i class="fas fa-share-square"></i> 10</a></li>
+</ul>
+
+ <ul class="list-inline">
+    <li><a href="#" data-toggle="tooltip" data-placement="top" title="Hooray!">Top</a></li>
+    <li><a href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!">Bottom</a></li>
+    <li><a href="#" data-toggle="tooltip" data-placement="left" title="Hooray!">Left</a></li>
+    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Hooray!">Right</a></li>
+  </ul>
+    <!-- /.container -->
+    <script src="jquery-3.3.1.slim.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>	
+	<script src="resource/js/wow.min.js"></script>
+	<script src="resource/js/jaliswall.js"></script>
+	
+	
+	<script>
+	 wow = new WOW(
+	 {
+	
+		}	) 
+		.init(); 
+	</script>
+
+	<script>$('.wall').jaliswall({item:'.wall-item'});</script>
+
+<!-- Logout Modal-->
+<!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+			<div class="modal-footer">
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+				<a class="btn btn-primary" href="login.html">Logout</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+	
+<!-- <div class="modal fade my-auto"  id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin">
+						<div class="card-body">
+							<h5 class="card-title text-center">Sign In</h5>
+							<form class="form-signin">
+								<div class="form-label-group">
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<label for="inputEmail">Email address</label>
+								</div>
+
+								<div class="form-label-group">
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<label for="inputPassword">Password</label>
+								</div>
+
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<label class="custom-control-label" for="customCheck1">Remember password</label>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+								-- <hr class="my-4"> --
+								<div class="text-center my-4">
+									<span class="txt1">
+										Or login with
+									</span>
+								</div>
+								<button class="btn btn-lg btn-facebook btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook</button>
+								<button class="btn btn-lg btn-google btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Google</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Not a member?
+									</span>
+									<a class="txt1 bo1 hov1" href="#">
+										Sign up now							
+									</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="modal fade my-auto"  id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+				<div class="col-sm-12 p-0 mx-auto">
+					<div class="card card-signin ">
+						<div class="card-body">
+						<div class="row text-center share_btn">
+							<div class="col-3">
+								<a class="fb" href="">
+									<i class="fab fa-facebook-f"></i>
+									<p>facebook</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="twit" href="">
+									<i class="fab fa-twitter"></i>
+									<p>twitter</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="google" href="">
+									<i class="fab fa-google-plus-g"></i>
+									<p>google +</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="blog" href="">
+									<i class="fab fa-blogger-b"></i>
+									<p>blogger</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="reddit" href="">
+									<i class="fab fa-reddit-alien"></i>
+									<p>reddit</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="tumblr" href="">
+									<i class="fab fa-tumblr"></i>
+									<p>tumblr</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="pinterest" href="">
+									<i class="fab fa-pinterest-p"></i>
+									<p>pinterest</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="linkedin" href="">
+									<i class="fab fa-linkedin-in"></i>
+									<p>linkedin</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="mix" href="">
+									<i class="fab fa-mix"></i>
+									<p>Mix</p>
+								</a>
+							</div>
+							<div class="col-3">
+								<a class="envelope" href="">
+									<i class="far fa-envelope"></i>	
+									<p>E-Mail</p>
+								</a>
+							</div>
+						</div>
+						<div class="">
+							<div class="input-group mb-3">
+								<input type="text" class="form-control" id="copyTarget" value="https://testlink.com/id=1234" disabled />
+								 <div class="input-group-append">
+									<button class="btn btn-success" id="copyButton" data-toggle="tooltip" data-placement="bottom" title="Click to copy!">Copy</button>
+								</div>
+							</div>
+						</div>
+						
+							<!--<h5 class="card-title text-center">Sign In</h5>
+							 <form class="form-signin">
+								<div class="form-label-group">
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<label for="inputEmail">Email address</label>
+								</div>
+
+								<div class="form-label-group">
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<label for="inputPassword">Password</label>
+								</div>
+
+								<div class="custom-control custom-checkbox mb-3">
+									<input type="checkbox" class="custom-control-input" id="customCheck1">
+									<label class="custom-control-label" for="customCheck1">Remember password</label>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+								-- <hr class="my-4"> --
+								<div class="text-center my-4">
+									<span class="txt1">
+										Or login with
+									</span>
+								</div>
+								<button class="btn btn-lg btn-facebook btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Facebook</button>
+								<button class="btn btn-lg btn-google btn-block m-b-10 text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Google</button>
+								<div class="text-center my-4">
+									<span class="txt1">
+										Not a member?
+									</span>
+									<a class="txt1 bo1 hov1" href="#">
+										Sign up now							
+									</a>
+								</div>
+							</form> -->
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(window).on('load', function() {
+	setTimeout(function(){
+		$('#loginModal').modal('show');
+	}, 1000);
+});
+
+</script>
+
+
+<script>
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+<script>
+var animateButton = function(e) {
+	e.preventDefault;
+	//reset animation
+	e.target.classList.remove('animate');
+	e.target.classList.add('animate');
+	setTimeout(function(){
+		e.target.classList.remove('animate');
+	},700);
+};
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+	bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+</script>
+<script>
+document.getElementById("copyButton").addEventListener("click", function() {
+	copyToClipboard(document.getElementById("copyTarget"));
+});
+
+function copyToClipboard(elem) {
+	  // create hidden text element, if it doesn't already exist
+    var targetId = "_hiddenCopyText_";
+    var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+    var origSelectionStart, origSelectionEnd;
+    if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+    } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+            var target = document.createElement("textarea");
+            target.style.position = "absolute";
+            target.style.left = "-9999px";
+            target.style.top = "0";
+            target.id = targetId;
+            document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+    }
+    // select the content
+    var currentFocus = document.activeElement;
+    target.focus();
+    target.setSelectionRange(0, target.value.length);
+    
+    // copy the selection
+    var succeed;
+    try {
+    	  succeed = document.execCommand("copy");
+    } catch(e) {
+        succeed = false;
+    }
+    // restore original focus
+    if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+    }
+    if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+    } else {
+        // clear temporary content
+        target.textContent = "";
+    }
+    return succeed;
+}
+</script>
+
+</body>
+
+</html>
